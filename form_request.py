@@ -3,7 +3,6 @@ import json
 import sys
 from get_wifi_SSID import WiFiUtil
 import time
-import subprocess
 
 wifi_SSID = ''
 counter = 0
@@ -16,11 +15,11 @@ while wifi_SSID == '':
 
 
 def main():
-    fname = "cfg.json"
+    fname = "entry.json"
     with open(fname, "r") as f:
-        cfg = json.load(f)
-        params = {"entry.{}".format(cfg["entry"][k]): cfg["output"][k] for k in cfg["entry"].keys()}
-        res = requests.get(cfg["form_url"] + "formResponse", params=params)
+        entry = json.load(f)
+        params = {"entry.{}".format(entry["entry"][k]): entry["output"][k] for k in entry["entry"].keys()}
+        res = requests.get(entry["form_url"] + "formResponse", params=params)
     if res.status_code == 200:
         print("Done!")
     else:
