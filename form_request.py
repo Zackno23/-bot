@@ -15,7 +15,7 @@ while wifi_SSID == '':
 
 
 def main():
-    fname = "entry.json"
+    fname = "exit.json"
     with open(fname, "r") as f:
         entry = json.load(f)
         params = {"entry.{}".format(entry["entry"][k]): entry["output"][k] for k in entry["entry"].keys()}

@@ -1,4 +1,2 @@
-from get_wifi_SSID import WiFiUtil
-
-rew = WiFiUtil.getUsingSSID()
-print(rew)
+import form_request
+form_request.main()
