@@ -3,6 +3,7 @@ import json
 import sys
 from get_wifi_SSID import WiFiUtil
 import time
+import datetime
 
 wifi_SSID = ''
 counter = 0
@@ -32,4 +33,7 @@ if __name__ == '__main__':
     if wifi_SSID in ('kigyoshimin@member', 'kigyoshimin@guest'):
         main()
     else:
+        with open('SSID.txt', mode="w") as f:
+            f.write(f'ssidは{wifi_SSID}です\n時間は{datetime.datetime.now()}です')
+
         sys.exit()
