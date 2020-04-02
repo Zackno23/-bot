@@ -1,5 +1,4 @@
 import tkinter
-from datetime import datetime
 
 class MessageClass:
     def __init__(self,message, year, month, date, hour, minuits):
@@ -21,7 +20,6 @@ class MessageClass:
         canvas.pack()
         label = tkinter.Label(root, text=display_text, font=("Times New Roman", 35), bg="white")
         label.place(x=30, y=150)
-        root.mainloop()
         root.mainloop()
 
 

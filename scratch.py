@@ -1,6 +1,10 @@
-num_tupple = (1,2)
+import datetime
 
-def tashizan(a,b):
-    print(a + b)
+now = str(datetime.datetime.now())
+date_now, time_now = now.split(' ')
+print(date_now)
+print(time_now)
 
-tashizan(*num_tupple)
+year, month, date = date_now.split("-")
+hour, minuits, second = time_now.split(':')
+print(hour)
