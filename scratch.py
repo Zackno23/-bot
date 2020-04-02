@@ -1,2 +1,6 @@
-import form_request
-form_request.main()
+num_tupple = (1,2)
+
+def tashizan(a,b):
+    print(a + b)
+
+tashizan(*num_tupple)
