@@ -5,6 +5,7 @@ from get_wifi_SSID import WiFiUtil
 import time
 import datetime
 import display_message
+
 '''
 時間の出力：main()と例外時に出力
 '''
@@ -23,14 +24,12 @@ def output_CSV(message, year, month, date, hour, minuits):
         f.write(f"\n{year}年{month}月{date}日{hour}時{minuits}分\n{message}")
 
 
-
 def main():
     # fname = "entry.json" <- 起動時にファイル名指定だと ファイルが見つからないと言われるのでフルパス指定
     with open(entry_json, "r") as f:
         entry = json.load(f)
         params = {"entry.{}".format(entry["entry"][k]): entry["output"][k] for k in entry["entry"].keys()}
         res = requests.get(entry["form_url"] + "formResponse", params=params)
-
 
 
 if __name__ == '__main__':
