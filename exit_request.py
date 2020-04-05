@@ -2,6 +2,13 @@ import requests
 import json
 import display_message
 import datetime
+from get_wifi_SSID import WiFiUtil
+import sys
+
+wifi_ssid = WiFiUtil.getUsingSSID()
+print(wifi_ssid)
+# if wifi_ssid not in ('kigyoshimin@member', 'kigyoshimin@guest'):
+#     sys.exit()
 
 exit_json = '/Users/yoshidachikara/PycharmProjects/slack_bot/exit.json'
 
@@ -14,8 +21,7 @@ def main():
     arguments = (message, year, month, date, hour, minuits)
     display_message.MessageClass(*arguments).display()
     # exit()
-def print_test(test):
-    print(test)
+
 # def exit():
 #     with open(exit_json, "r") as f:
 #         entry = json.load(f)
